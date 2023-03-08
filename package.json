@@ -1,0 +1,16 @@
+{
+  "name": "@riflowth/eslint-config-ts-strict",
+  "description": "ESLint TypeScript config for strict type checking",
+  "author": "riflowth <me@riflowth.com>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "typescript": "^4.9.5"
+  }
+}
