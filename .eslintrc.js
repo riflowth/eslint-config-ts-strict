@@ -11,14 +11,43 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    // Prefer named exports
+    // Allow annonymous class
+    'max-classes-per-file': [
+      'error', { 'ignoreExpressions': true },
+    ],
+
+    // Exclude ForOfStatement
+    'no-restricted-syntax': [
+      'error', 'ForInStatement', 'LabeledStatement', 'WithStatement',
+    ],
+
+    // Allow unused parameters for inheritance
+    'no-unused-vars': [
+      'error', { 'args': 'none' },
+    ],
+    '@typescript-eslint/no-unused-vars': 'off',
+
+    // Allow default parameter for inferrable types
+    '@typescript-eslint/no-inferrable-types': 'off',
+
+    // Allow private constructor
+    '@typescript-eslint/no-empty-function': [
+      'error', { 'allow': ['private-constructors'] },
+    ],
+
+    // Fix path mapping issue
+    'import/extensions': [
+      'error', 'ignorePackages', { '': 'never' },
+    ],
+
+    // Disable prefer named exports
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
 
     // Prefer explicit return type
     '@typescript-eslint/explicit-function-return-type': 'error',
 
-    // Class coding-style
+    // Coding styles
     'padded-blocks': [
       'error', { 'classes': 'always' },
     ],
@@ -33,15 +62,16 @@ module.exports = {
       'error',
       2,
       {
-        "ignoredNodes": [
-          "FunctionExpression > .params[decorators.length > 0]",
-          "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
-          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key",
+        'ignoredNodes': [
+          'FunctionExpression > .params[decorators.length > 0]',
+          'FunctionExpression > .params > :matches(Decorator, :not(:first-child))',
+          'ClassBody.body > PropertyDefinition[decorators.length > 0] > .key',
         ],
       },
     ],
 
-    // Others
+    // Extra
     'class-methods-use-this': 'off',
+    'no-plusplus': 'off',
   },
 };
